@@ -10,8 +10,7 @@ assignees: ''
 ##all '##' are comments, please remove them and fill up what they tell you to, keep the ONLY '#' in the top of the json intact; the result SHOULD be a valid JSON (only the JSON in the whole content of the issue)
 ##CURSED LEVEL CHART: 1: a bit cursed (but still passable as sane), 2: starting to enter the sane-insane gray zone, 3: insane, 4: REALLY CURSED, 5: TOO CURSED TO CLASSIFY
 
-"6": {
-	"id": 6,
+"#": {
 	"source": "##put a link (if it's from Reddit (if possible)), or put author name, if you don't know who made it just put 'unknown', if an AI made it, put 'AI'",
 	"pasta": "##paste here the copypasta",
 	"nsfw": ##put 'true' if the copypasta is NSFW, put 'false' if it isn't,
