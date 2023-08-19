@@ -17,6 +17,6 @@ assignees: ''
 	"cursed-level": ##use the 'CURSED LEVEL CHART' to determine the number,
 	"made-as": "##put 'male, 'female, or 'any' depending on copypasta context (this is for filtering (the name is self-explanatory))",
 	"directed-to": "##same as the above one!",
-	"tags": [ "#put tags in this (->) pattern as an array", "##extract them via putting keywords of the copypasta", "##ex: if the copypasta talks about ants and Furries, put 'ants' and 'furries' as tags! (capitalization doesn't matter!)" ],
+	"tags": [ "##put tags in this (->) pattern as an array", "##extract them via putting keywords of the copypasta", "##ex: if the copypasta talks about ants and Furries, put 'ants' and 'furries' as tags! (capitalization doesn't matter!)" ],
 	"lang": "##put in which lang the copypasta is, ex: 'en_US', 'es_es'"
 }
