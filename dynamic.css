@@ -1,7 +1,7 @@
 container {
 	width: 500px;
 	background-color: #3333334b;
-	backdrop-filter: blur(8px);
+	backdrop-filter: blur(5px);
 	border-radius: 1rem;
 	position: relative;
 	z-index: 2;
@@ -15,7 +15,7 @@ container .id-text {
 	cursor: pointer;
 }
 container .id-text:hover {
-	color: rgb(236, 235, 235);
+	color: rgb(207, 205, 205);
 }
 container .pasta {
 	font-size: 15px;
