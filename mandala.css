@@ -1,0 +1,38 @@
+#mandala-container {
+	bottom: -280px;
+	right: -280px;
+	position: fixed;
+	animation: rotation 500s linear infinite;
+	z-index: 1;
+}
+#mandala {
+	font-size: 1.5rem;
+	font-weight: 300;
+	user-select: none;
+	z-index: 1;
+}
+#mandala-container textPath[href="#circle1"] {
+	font-size:1.5rem
+}
+#mandala-container textPath[href="#circle2"] {
+	font-size:1.3rem
+}
+#mandala-container textPath[href="#circle3"] {
+	font-size:1.2rem
+}
+#mandala-container textPath[href="#circle4"] {
+	font-size:1.1rem
+}
+#mandala-container textPath[href="#circle5"] {
+	font-size:1rem
+}
+@keyframes rotation {
+	0% {
+		-webkit-transform:rotate(0deg);
+		transform:rotate(0deg)
+	}
+	to {
+		-webkit-transform:rotate(1turn);
+		transform:rotate(1turn)
+	}
+}

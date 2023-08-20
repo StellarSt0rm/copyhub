@@ -1,0 +1,47 @@
+container {
+	width: 500px;
+	background-color: #3333334b;
+	backdrop-filter: blur(8px);
+	border-radius: 1rem;
+	position: relative;
+	z-index: 2;
+}
+container .id-text {
+	font-size: 50px;
+	margin: 0 0 5px 10px;
+	border: none;
+	background: none;
+	color: white;
+	cursor: pointer;
+}
+container .id-text:hover {
+	color: rgb(236, 235, 235);
+}
+container .pasta {
+	font-size: 15px;
+	margin: 3px 20px 0 20px;
+}
+container .tags .text {
+	display: inline-block;
+	margin-left: 20px;
+	font-weight: bold;
+}
+container .tags {
+	display: inline-block;
+	user-select: none;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 8px;
+}
+container .tags button {
+	border: none;
+	background-color: #262626c0;
+	border-radius: 8px;
+	color: white;
+	cursor: pointer;
+}
+container .tags button:hover {
+	background-color: #313131c2;
+}
