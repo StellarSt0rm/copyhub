@@ -29,7 +29,7 @@ function handleIdClick(id) {
   navigator.clipboard.writeText(`${id}`);
 }
 
-function SearchTags(jsonTagsTestDataList, searchTerm) {
+function searchTags(jsonTagsTestDataList, searchTerm) {
 	console.log(`Searching Tag Matches For '${searchTerm}'`)
 	function searchJson(jsonData, searchTerm) {
 		let matches = [];
