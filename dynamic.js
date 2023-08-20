@@ -29,7 +29,7 @@ function handleIdClick(id) {
   navigator.clipboard.writeText(`${id}`);
 }
 
-function SearchTags(jsonData, searchTerm) {
+function SearchTags(jsonTagsTestDataList, searchTerm) {
 	console.log(`Searching Tag Matches For '${searchTerm}'`)
 	function searchJson(jsonData, searchTerm) {
 		let matches = [];
@@ -56,33 +56,16 @@ function SearchTags(jsonData, searchTerm) {
 	}
 }
 
-// Example data for multiple template executions
-const templateDataList = [
-	{ id: "123", pasta: "Pasta Text 1", tags: ["Tag1", "Tag2"] },
-	{ id: "456", pasta: "Pasta Text 2", tags: ["Tag3", "Tag4"] },
-	{ id: "789", pasta: "Pasta Text 3", tags: ["Tag5", "Tag6"] },
-	{ id: "101112", pasta: "Pasta Text 4", tags: ["Tag7", "Tag8"] },
-	// Add more template data objects as needed
+// Test Data
+const jsonDataList = [
+	{ id: "1", pasta: "Test Pasta 1", tags: [ "Test Tag 1", "Test Tag 2", "Test Tag 3" ] },
+	{ id: "2", pasta: "Test Pasta 2", tags: [ "Test Tag 3", "Test Tag 4", "Test Tag 5" ] },
+	{ id: "3", pasta: "Test Pasta 3", tags: [ "Test Tag 5", "Test Tag 6", "Test Tag 7" ] },
+	{ id: "4", pasta: "Test Pasta 4", tags: [ "Test Tag 7", "Test Tag 8", "Test Tag 9" ] },
 ]
-const jsonData = {
-	"1": {
-			"tags": ["apple", "banana", "cherry"]
-	},
-	"2": {
-			"tags": ["banana", "grape"]
-	},
-	"3": {
-			"tags": ["apple", "orange"]
-	},
-	"4": {
-			"tags": ["banana", "strawberry"]
-	},
-	"5": {
-			"tags": ["kiwi", "mango"]
-	}
-};
+const jsonTagsTestDataList = { "1": { "tags": [ "apple", "banana", "cherry" ] }, "2": { "tags": [ "banana", "grape" ] }, "3": { "tags": [ "apple", "orange" ] }, "4": { "tags": [ "banana", "strawberry" ] }, "5": { "tags": [ "kiwi", "mango" ] } };
 
 // Fill and append templates using the example data
-templateDataList.forEach(data => {
+jsonDataList.forEach(data => {
 	appendTemplate(data.id, data.pasta, data.tags);
 })
