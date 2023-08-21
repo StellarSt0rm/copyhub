@@ -33,8 +33,8 @@ function searchTags(jsonTagsTestDataList, searchTerm) {
 	console.log(`Searching Tag Matches For '${searchTerm}'`)
 	function searchJson(jsonTagsTestDataList, searchTerm) {
 		let matches = [];
-		for (let key in jsonData) {
-			let value = jsonData[key];
+		for (let key in jsonTagsTestDataList) {
+			let value = jsonTagsTestDataList[key];
 			if (typeof value === "object" && "tags" in value) {
 				let tags = value["tags"];
 				if (tags.includes(searchTerm)) {
