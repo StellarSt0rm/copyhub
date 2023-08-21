@@ -31,7 +31,7 @@ function handleIdClick(id) {
 
 function searchTags(jsonTagsTestDataList, searchTerm) {
 	console.log(`Searching Tag Matches For '${searchTerm}'`)
-	function searchJson(jsonData, searchTerm) {
+	function searchJson(jsonTagsTestDataList, searchTerm) {
 		let matches = [];
 		for (let key in jsonData) {
 			let value = jsonData[key];
@@ -48,7 +48,7 @@ function searchTags(jsonTagsTestDataList, searchTerm) {
 		}
 		return matches
 	}
-	const results = searchJson(jsonData, searchTerm);
+	const results = searchJson(jsonTagsTestDataList, searchTerm);
 	if (results.length > 0) {
 		return results
 	} else {
