@@ -1,4 +1,6 @@
 console.log(`Automatic Filling:\n `); console.log(`----`)
+
+// Template Filler Function
 function appendTemplate(id, pasta, tags) {
   const template = `
     <container style="margin: 10px;">
@@ -20,6 +22,7 @@ function appendTemplate(id, pasta, tags) {
   return "Done.";
 }
 
+// Action Handler Functions
 function handleTagClick(tag) {
   console.log(`Tag '${tag}' Clicked.`);
 }
@@ -29,6 +32,7 @@ function handleIdClick(id) {
   navigator.clipboard.writeText(`${id}`);
 }
 
+// Test Function To Search In The Json (Will Be Hooked With 'appendTemplate()' At Some Point
 function searchTags(jsonTagsTestDataList, searchTerm) {
 	console.log(`Searching Tag Matches For '${searchTerm}'`)
 	function searchJson(jsonTagsTestDataList, searchTerm) {
@@ -56,6 +60,21 @@ function searchTags(jsonTagsTestDataList, searchTerm) {
 	}
 }
 
+// Get Json Function (Reusable)
+async function fetchJson(jsonPath) {
+  try {
+    const response = await fetch(jsonPath);
+    const jsonData = await response.json();
+    
+    console.log(jsonData);
+    
+    return jsonData;
+  } catch (error) {
+    console.error(' (fetchJson) Error:', error);
+    throw error;
+  }
+}
+
 // Test Data
 const jsonDataList = [
 	{ id: "1", pasta: "Test Pasta 1", tags: [ "Test Tag 1", "Test Tag 2", "Test Tag 3" ] },
@@ -63,8 +82,9 @@ const jsonDataList = [
 	{ id: "3", pasta: "Test Pasta 3", tags: [ "Test Tag 5", "Test Tag 6", "Test Tag 7" ] },
 	{ id: "4", pasta: "Test Pasta 4", tags: [ "Test Tag 7", "Test Tag 8", "Test Tag 9" ] },
 ]
-const jsonTagsTestDataList = fetch('./copypastas.json').then(response => response.json()).catch(error => console.error('(jsonTagsTestDataList) Error:', error));
-// Fill and append templates using the example data
+const jsonTagsTestDataList = fetchJson("./copypastas.json")
+
+// Fill Templates
 jsonDataList.forEach(data => {
 	appendTemplate(data.id, data.pasta, data.tags);
 })
