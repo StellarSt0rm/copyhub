@@ -2,37 +2,37 @@ console.log(`Automatic Filling:\n `); console.log(`----`)
 
 // Template Filler Function
 function appendTemplate(id, pasta, tags) {
-  const template = `
-    <container style="margin: 10px;">
-      <button onclick="handleIdClick('${id}')" class="id-text">ID: ${id}</button>
-      <p class="pasta">${pasta}</p>
-      <div class="tags">
-        <p class="text">Tags:&nbsp;</p>
-        ${tags.map(tag => `<button onclick="handleTagClick('${tag}')">${tag}</button>&nbsp;`).join('')}
-      </div>
-    </container>
-  `;
-  
-  console.log(`Filling Template For ID '${id}'`);
-  const contentElement = document.getElementById("content");
+	const template = `
+		<container style="margin: 10px;">
+			<button onclick="handleIdClick('${id}')" class="id-text">ID: ${id}</button>
+			<p class="pasta">${pasta}</p>
+			<div class="tags">
+				<p class="text">Tags:&nbsp;</p>
+				${tags.map(tag => `<button onclick="handleTagClick('${tag}')">${tag}</button>&nbsp;`).join('')}
+			</div>
+		</container>
+	`;
+	
+	console.log(`Filling Template For ID '${id}'`);
+	const contentElement = document.getElementById("content");
 	console.log(`  Inserted ID`)
 	console.log(`  Inserted Pasta`)
 	console.log(`  Inserted Tags`)
-  console.log(`Appending Template To '#content'`);
-  contentElement.insertAdjacentHTML("beforeend", template);
-  console.log(`  Appended Template.`);
-  console.log(`----`);
-  return "Done.";
+	console.log(`Appending Template To '#content'`);
+	contentElement.insertAdjacentHTML("beforeend", template);
+	console.log(`  Appended Template.`);
+	console.log(`----`);
+	return "Done.";
 }
 
 // Action Handler Functions
 function handleTagClick(tag) {
-  console.log(`Tag '${tag}' Clicked.`);
+	console.log(`Tag '${tag}' Clicked.`);
 }
 
 function handleIdClick(id) {
-  console.log(`ID '${id}' Clicked. (And Copied To User Clipboard)`);
-  navigator.clipboard.writeText(`${id}`);
+	console.log(`ID '${id}' Clicked. (And Copied To User Clipboard)`);
+	navigator.clipboard.writeText(`${id}`);
 }
 
 // Test Function To Search In The Json (Will Be Hooked With 'appendTemplate()' At Some Point
