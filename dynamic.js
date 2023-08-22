@@ -60,9 +60,6 @@ function searchTags(jsonTagsTestDataList, searchTerm) {
 	}
 }
 
-// Get Json Function (Reusable)
-function getJson(jsonPath) { return fetch(jsonPath).then(response => response.json()); }
-
 // Test Data
 const jsonDataList = [
 	{ id: "1", pasta: "Test Pasta 1", tags: [ "Test Tag 1", "Test Tag 2", "Test Tag 3" ] },
