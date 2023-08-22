@@ -1,38 +1,38 @@
 {
-  "1": {
-    "pasta": "Test Pasta 1",
-    "nsfw": false,
+	"1": {
+		"pasta": "Test Pasta 1",
+		"nsfw": false,
 		"cursed-level": 0,
 		"made-as": "any",
 		"directed-to": "any",
 		"tags": [ "Test Tag 1", "Test Tag 2", "Test Tag 3", "Test Tag 4" ],
 		"lang": "en_US"
-  },
-    "2": {
-    "pasta": "Test Pasta 2",
-    "nsfw": false,
+	},
+	"2": {
+		"pasta": "Test Pasta 2",
+		"nsfw": false,
 		"cursed-level": 0,
 		"made-as": "any",
 		"directed-to": "any",
 		"tags": [ "Test Tag 3", "Test Tag 4", "Test Tag 5", "Test Tag 6" ],
 		"lang": "en_US"
-  },
-    "3": {
-    "pasta": "Test Pasta 3",
-    "nsfw": false,
+	},
+	"3": {
+		"pasta": "Test Pasta 3",
+		"nsfw": false,
 		"cursed-level": 0,
 		"made-as": "any",
 		"directed-to": "any",
 		"tags": [ "Test Tag 5", "Test Tag 6", "Test Tag 7", "Test Tag 8" ],
 		"lang": "en_US"
-  },
-    "4": {
-    "pasta": "Test Pasta 4",
-    "nsfw": false,
+	},
+	"4": {
+		"pasta": "Test Pasta 4",
+		"nsfw": false,
 		"cursed-level": 0,
 		"made-as": "any",
 		"directed-to": "any",
 		"tags": [ "Test Tag 7", "Test Tag 8", "Test Tag 9", "Test Tag 10" ],
 		"lang": "en_US"
-  }
+	}
 }
