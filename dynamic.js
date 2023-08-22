@@ -63,8 +63,7 @@ const jsonDataList = [
 	{ id: "3", pasta: "Test Pasta 3", tags: [ "Test Tag 5", "Test Tag 6", "Test Tag 7" ] },
 	{ id: "4", pasta: "Test Pasta 4", tags: [ "Test Tag 7", "Test Tag 8", "Test Tag 9" ] },
 ]
-const jsonTagsTestDataList = { "1": { "tags": [ "apple", "banana", "cherry" ] }, "2": { "tags": [ "banana", "grape" ] }, "3": { "tags": [ "apple", "orange" ] }, "4": { "tags": [ "banana", "strawberry" ] }, "5": { "tags": [ "kiwi", "mango" ] } };
-
+const jsonTagsTestDataList = fetch('./copypastas.json').then(response => response.json()).catch(error => console.error('(jsonTagsTestDataList) Error:', error));
 // Fill and append templates using the example data
 jsonDataList.forEach(data => {
 	appendTemplate(data.id, data.pasta, data.tags);
