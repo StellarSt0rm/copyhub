@@ -61,18 +61,8 @@ function searchTags(jsonTagsTestDataList, searchTerm) {
 }
 
 // Get Json Function (Reusable)
-async function fetchJson(jsonPath) {
-  try {
-    const response = await fetch(jsonPath);
-    const jsonData = await response.json();
-    
-    console.log(jsonData);
-    
-    return jsonData;
-  } catch (error) {
-    console.error(' (fetchJson) Error:', error);
-    throw error;
-  }
+function getJson(jsonPath) {
+    return fetch(jsonPath).then(response => response.json());
 }
 
 // Test Data
@@ -82,7 +72,7 @@ const jsonDataList = [
 	{ id: "3", pasta: "Test Pasta 3", tags: [ "Test Tag 5", "Test Tag 6", "Test Tag 7" ] },
 	{ id: "4", pasta: "Test Pasta 4", tags: [ "Test Tag 7", "Test Tag 8", "Test Tag 9" ] },
 ]
-const jsonTagsTestDataList = fetchJson("./copypastas.json")
+const jsonTagsTestDataList = getJson("./copypastas.json").then(info => { var title = info.title; console.log(title); }
 
 // Fill Templates
 jsonDataList.forEach(data => {
