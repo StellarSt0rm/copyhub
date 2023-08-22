@@ -70,7 +70,7 @@ const jsonDataList = [
 	{ id: "3", pasta: "Test Pasta 3", tags: [ "Test Tag 5", "Test Tag 6", "Test Tag 7" ] },
 	{ id: "4", pasta: "Test Pasta 4", tags: [ "Test Tag 7", "Test Tag 8", "Test Tag 9" ] },
 ]
-var jsonTagsTestDataList=[]; fetch('./copypastas.json').then(response => response.json()).then(jsonData => { jsonTagsTestDataList = jsonData; })
+var jsonTagsTestDataList=[]; fetch('./resources/copypastas.json').then(response => response.json()).then(jsonData => { jsonTagsTestDataList = jsonData; })
 
 // Fill Templates
 jsonDataList.forEach(data => {
