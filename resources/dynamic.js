@@ -15,6 +15,9 @@ function appendTemplate(id, pasta, tags) {
   
   console.log(`Filling Template For ID '${id}'`);
   const contentElement = document.getElementById("content");
+	console.log(`  Inserted ID`)
+	console.log(`  Inserted Pasta`)
+	console.log(`  Inserted Tags`)
   console.log(`Appending Template To '#content'`);
   contentElement.insertAdjacentHTML("beforeend", template);
   console.log(`  Appended Template.`);
