@@ -36,12 +36,12 @@ function handleIdClick(id) {
 }
 
 // Test Function To Search In The Json (Will Be Hooked With 'appendTemplate()' At Some Point
-function searchTags(jsonData, searchTerm) {
+function searchTags(pastaJsonData, searchTerm) {
 	console.log(`Searching Tag Matches For '${searchTerm}'`)
-	function searchJson(jsonData, searchTerm) {
+	function searchJson(pastaJsonData, searchTerm) {
 		let matches = [];
-		for (let key in jsonData) {
-			let value = jsonData[key];
+		for (let key in pastaJsonData) {
+			let value = pastaJsonData[key];
 			if (typeof value === "object" && "tags" in value) {
 				let tags = value["tags"];
 				if (tags.includes(searchTerm)) {
@@ -55,7 +55,7 @@ function searchTags(jsonData, searchTerm) {
 		}
 		return matches
 	}
-	const results = searchJson(jsonData, searchTerm);
+	const results = searchJson(pastaJsonData, searchTerm);
 	if (results.length > 0) {
 		return results
 	} else {
@@ -64,9 +64,9 @@ function searchTags(jsonData, searchTerm) {
 }
 
 // Data Extractor From ID
-function extractJsonData(ids, jsonData) {
+function extractJsonData(ids, pastaJsonData) {
 	for (const id of ids) {
-		const idData = jsonData[id];
+		const idData = pastaJsonData[id];
 			if (idData) {
 				console.log(`Extracting Data For ID '${id}'`)
 				console.log(`  Extracting Pasta`)
@@ -82,10 +82,10 @@ function extractJsonData(ids, jsonData) {
 }
 
 // Load Json (Only Works When Hosted)
-var jsonData=[]; fetch('./resources/copypastas.json').then(response => response.json()).then(jsonData => { jsonData = jsonData; })
+var pastaJsonData=[]; fetch('./resources/copypastas.json').then(response => response.json()).then(jsonData => { pastaJsonData = jsonData; })
 
 /* Local Test Json Data (For Local Testing)
-var jsonData={
+var pastaJsonData={
 	"1": {
 		"pasta": "Test Pasta 1",
 		"nsfw": false,
@@ -125,9 +125,9 @@ var jsonData={
 };*/
 
 // Initial Start Data Filling
-for (const id in jsonData) {
-	if (jsonData.hasOwnProperty(id)) {
-		const { pasta, tags } = jsonData[id];
+for (const id in pastaJsonData) {
+	if (pastaJsonData.hasOwnProperty(id)) {
+		const { pasta, tags } = pastaJsonData[id];
 		appendTemplate(id, pasta, tags);
 	}
 }
