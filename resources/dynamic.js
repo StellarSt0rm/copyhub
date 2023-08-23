@@ -81,9 +81,6 @@ function extractJsonData(ids, pastaJsonData) {
 	}
 }
 
-// Load Json (Only Works When Hosted)
-var pastaJsonData=[]; fetch('./resources/copypastas.json').then(response => response.json()).then(jsonData => { pastaJsonData = jsonData; })
-
 /* Local Test Json Data (For Local Testing)
 var pastaJsonData={
 	"1": {
@@ -124,10 +121,19 @@ var pastaJsonData={
 	}
 };*/
 
-// Initial Data Filling
-for (const id in pastaJsonData) {
-	if (pastaJsonData.hasOwnProperty(id)) {
-		const { pasta, tags } = pastaJsonData[id];
-		appendTemplate(id, pasta, tags);
-	};
+// Set Json Data And Start Initial Card Filling
+var pastaJsonData = [];
+try {
+		const response = await fetch('./resources/copypastas.json');
+		const jsonData = await response.json();
+		pastaJsonData = jsonData;
+
+		for (const id in pastaJsonData) {
+			if (pastaJsonData.hasOwnProperty(id)) {
+				const { pasta, tags } = pastaJsonData[id];
+				appendTemplate(id, pasta, tags);
+			}
+		}
+} catch (error) {
+	console.error('(Set Json Data) An error occurred:', error);
 }
