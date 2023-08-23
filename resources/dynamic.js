@@ -82,7 +82,7 @@ function extractJsonData(ids, jsonData) {
 }
 
 // Load Json (Only Works When Hosted)
-var jsonTagsTestDataList=[]; fetch('./resources/copypastas.json').then(response => response.json()).then(jsonData => { jsonTagsTestDataList = jsonData; })
+var jsonData=[]; fetch('./resources/copypastas.json').then(response => response.json()).then(jsonData => { jsonTagsTestDataList = jsonData; })
 
 /* Local Test Json Data (For Local Testing)
 var jsonData={
