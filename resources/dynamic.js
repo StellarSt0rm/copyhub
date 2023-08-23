@@ -124,7 +124,7 @@ var pastaJsonData={
 	}
 };*/
 
-// Initial Start Data Filling
+// Initial Data Filling
 for (const id in pastaJsonData) {
 	if (pastaJsonData.hasOwnProperty(id)) {
 		const { pasta, tags } = pastaJsonData[id];
