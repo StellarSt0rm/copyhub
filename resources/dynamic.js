@@ -125,12 +125,9 @@ var pastaJsonData={
 };*/
 
 // Initial Start Data Filling
-function initialJsonFill(pastaJsonData) {
-	for (const id in pastaJsonData) {
-		if (pastaJsonData.hasOwnProperty(id)) {
-			const { pasta, tags } = pastaJsonData[id];
-			appendTemplate(id, pasta, tags);
-		}
-	}
+for (const id in pastaJsonData) {
+	if (pastaJsonData.hasOwnProperty(id)) {
+		const { pasta, tags } = pastaJsonData[id];
+		appendTemplate(id, pasta, tags);
+	};
 }
-initialJsonFill(pastaJsonData)
