@@ -36,12 +36,12 @@ function handleIdClick(id) {
 }
 
 // Test Function To Search In The Json (Will Be Hooked With 'appendTemplate()' At Some Point
-function searchTags(jsonTagsTestDataList, searchTerm) {
+function searchTags(jsonData, searchTerm) {
 	console.log(`Searching Tag Matches For '${searchTerm}'`)
-	function searchJson(jsonTagsTestDataList, searchTerm) {
+	function searchJson(jsonData, searchTerm) {
 		let matches = [];
-		for (let key in jsonTagsTestDataList) {
-			let value = jsonTagsTestDataList[key];
+		for (let key in jsonData) {
+			let value = jsonData[key];
 			if (typeof value === "object" && "tags" in value) {
 				let tags = value["tags"];
 				if (tags.includes(searchTerm)) {
@@ -55,7 +55,7 @@ function searchTags(jsonTagsTestDataList, searchTerm) {
 		}
 		return matches
 	}
-	const results = searchJson(jsonTagsTestDataList, searchTerm);
+	const results = searchJson(jsonData, searchTerm);
 	if (results.length > 0) {
 		return results
 	} else {
@@ -63,16 +63,71 @@ function searchTags(jsonTagsTestDataList, searchTerm) {
 	}
 }
 
-// Test Data
-const jsonDataList = [
-	{ id: "1", pasta: "Test Pasta 1", tags: [ "Test Tag 1", "Test Tag 2", "Test Tag 3" ] },
-	{ id: "2", pasta: "Test Pasta 2", tags: [ "Test Tag 3", "Test Tag 4", "Test Tag 5" ] },
-	{ id: "3", pasta: "Test Pasta 3", tags: [ "Test Tag 5", "Test Tag 6", "Test Tag 7" ] },
-	{ id: "4", pasta: "Test Pasta 4", tags: [ "Test Tag 7", "Test Tag 8", "Test Tag 9" ] },
-]
+// Data Extractor From ID
+function extractJsonData(ids, jsonData) {
+	for (const id of ids) {
+		const idData = jsonData[id];
+			if (idData) {
+				console.log(`Extracting Data For ID '${id}'`)
+				console.log(`  Extracting Pasta`)
+				const pasta = idData.pasta;
+				console.log(`  Extracting Tags`)
+				const tags = idData.tags;
+
+				console.log(`  Sending Data To 'appendTemplate()'`)
+				console.log(` --`)
+				appendTemplate(id, pasta, tags);
+		}
+	}
+}
+
+// Load Json (Only Works When Hosted)
 var jsonTagsTestDataList=[]; fetch('./resources/copypastas.json').then(response => response.json()).then(jsonData => { jsonTagsTestDataList = jsonData; })
 
-// Fill Templates
-jsonDataList.forEach(data => {
-	appendTemplate(data.id, data.pasta, data.tags);
-})
+/* Local Test Json Data (For Local Testing)
+var jsonData={
+	"1": {
+		"pasta": "Test Pasta 1",
+		"nsfw": false,
+		"cursed-level": 0,
+		"made-as": "any",
+		"directed-to": "any",
+		"tags": [ "Test Tag 1", "Test Tag 2", "Test Tag 3", "Test Tag 4" ],
+		"lang": "en_US"
+	},
+	"2": {
+		"pasta": "Test Pasta 2",
+		"nsfw": false,
+		"cursed-level": 0,
+		"made-as": "any",
+		"directed-to": "any",
+		"tags": [ "Test Tag 3", "Test Tag 4", "Test Tag 5", "Test Tag 6" ],
+		"lang": "en_US"
+	},
+	"3": {
+		"pasta": "Test Pasta 3",
+		"nsfw": false,
+		"cursed-level": 0,
+		"made-as": "any",
+		"directed-to": "any",
+		"tags": [ "Test Tag 5", "Test Tag 6", "Test Tag 7", "Test Tag 8" ],
+		"lang": "en_US"
+	},
+	"4": {
+		"pasta": "Test Pasta 4",
+		"nsfw": false,
+		"cursed-level": 0,
+		"made-as": "any",
+		"directed-to": "any",
+		"tags": [ "Test Tag 7", "Test Tag 8", "Test Tag 9", "Test Tag 10" ],
+		"lang": "en_US"
+	}
+};*/
+
+// Initial Start Data Filling
+for (const id in jsonData) {
+	if (jsonData.hasOwnProperty(id)) {
+		const { pasta, tags } = jsonData[id];
+		appendTemplate(id, pasta, tags);
+	}
+}
