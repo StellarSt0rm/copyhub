@@ -122,6 +122,7 @@ var pastaJsonData={
 // Set Json Data And Start Initial Card Filling
 var pastaJsonData = [];
 async function automaticFilling() {
+	console.log(`Transfering Pasta Data...`)
 	try {
 			const response = await fetch('./resources/copypastas.json');
 			const jsonData = await response.json();
