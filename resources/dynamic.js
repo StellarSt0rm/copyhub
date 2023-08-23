@@ -122,12 +122,12 @@ var pastaJsonData={
 // Set Json Data And Start Initial Card Filling
 var pastaJsonData = [];
 async function automaticFilling() {
-	console.log(`Automatic Filling:\n `); console.log(`----`);
 	try {
 			const response = await fetch('./resources/copypastas.json');
 			const jsonData = await response.json();
 			pastaJsonData = jsonData;
 
+			console.log(`Automatic Filling:\n `); console.log(`----`);
 			for (const id in pastaJsonData) {
 				if (pastaJsonData.hasOwnProperty(id)) {
 					const { pasta, tags } = pastaJsonData[id];
