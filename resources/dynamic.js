@@ -79,6 +79,17 @@ function extractJsonData(ids, pastaJsonData) {
 	}
 }
 
+// Search Handler
+document.getElementById('myForm').addEventListener('submit', function(event) {
+	event.preventDefault(); // Prevents the form from submitting normally
+
+	var searchQuery = document.getElementById('textbox').value;
+
+	var url = 'https://stellarst0rm/search?query=' + encodeURIComponent(searchQuery) + '&param=' + encodeURIComponent(customParam);
+
+	window.location.href = url; // Redirects to the search page with the query parameters
+});
+
 /* Local Test Json Data (For Local Testing)
 var pastaJsonData={
 	"1": {
