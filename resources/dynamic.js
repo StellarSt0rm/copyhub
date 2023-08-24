@@ -142,8 +142,10 @@ async function automaticFilling() {
 			console.log(`Automatic Filling:\n `); console.log(`----`);
 			for (const id in pastaJsonData) {
 				if (pastaJsonData.hasOwnProperty(id)) {
-					const { pasta, tags } = pastaJsonData[id];
-					appendTemplate(id, pasta, tags);
+					const { pasta, tags, nsfw } = pastaJsonData[id];
+					if( nsfw !== true ) {
+						appendTemplate(id, pasta, tags);
+					}
 				}
 			}
 	} catch (error) {
