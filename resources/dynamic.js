@@ -85,7 +85,7 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
 
 	var searchQuery = document.getElementById('textbox').value;
 
-	var url = 'https://stellarst0rm/search?query=' + encodeURIComponent(searchQuery) + '&param=1234';
+	var url = 'https://stellarst0rm/copyhub/search?query=' + encodeURIComponent(searchQuery) + '&param=1234';
 
 	window.location.href = url; // Redirects to the search page with the query parameters
 });
