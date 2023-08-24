@@ -80,7 +80,7 @@ function extractJsonData(ids, pastaJsonData) {
 }
 
 // Search Handler
-document.getElementById('myForm').addEventListener('submit', function(event) {
+document.getElementById('searchbar').addEventListener('submit', function(event) {
 	event.preventDefault(); // Prevents the form from submitting normally
 
 	var searchQuery = document.getElementById('textbox').value;
