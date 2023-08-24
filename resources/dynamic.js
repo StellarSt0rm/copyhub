@@ -94,7 +94,6 @@ document.getElementById('searchbar').addEventListener('submit', function(event) 
 var pastaJsonData={
 	"1": {
 		"pasta": "Test Pasta 1",
-		"nsfw": false,
 		"cursed-level": 0,
 		"made-as": "any",
 		"directed-to": "any",
@@ -103,7 +102,6 @@ var pastaJsonData={
 	},
 	"2": {
 		"pasta": "Test Pasta 2",
-		"nsfw": false,
 		"cursed-level": 0,
 		"made-as": "any",
 		"directed-to": "any",
@@ -112,7 +110,6 @@ var pastaJsonData={
 	},
 	"3": {
 		"pasta": "Test Pasta 3",
-		"nsfw": false,
 		"cursed-level": 0,
 		"made-as": "any",
 		"directed-to": "any",
@@ -121,7 +118,6 @@ var pastaJsonData={
 	},
 	"4": {
 		"pasta": "Test Pasta 4",
-		"nsfw": false,
 		"cursed-level": 0,
 		"made-as": "any",
 		"directed-to": "any",
@@ -142,10 +138,8 @@ async function automaticFilling() {
 			console.log(`Automatic Filling:\n `); console.log(`----`);
 			for (const id in pastaJsonData) {
 				if (pastaJsonData.hasOwnProperty(id)) {
-					const { pasta, tags, nsfw } = pastaJsonData[id];
-					if( nsfw !== true ) {
-						appendTemplate(id, pasta, tags);
-					}
+					const { pasta, tags } = pastaJsonData[id];
+					appendTemplate(id, pasta, tags);
 				}
 			}
 	} catch (error) {

@@ -7,12 +7,11 @@ assignees: ''
 
 ---
 
-##all '##' are comments, please remove them and fill up what they tell you to, keep the ONLY '#' in the top of the json intact; the result SHOULD be a valid JSON (only the JSON in the whole content of the issue)
+##all '##' are comments, please remove them and fill up what they tell you to, keep the ONLY '#' in the top of the json intact; the result SHOULD be a valid JSON (only the JSON in the whole content of the issue) --- (NSFW is **BANNED**)
 ##CURSED LEVEL CHART: 1: a bit cursed (but still passable as sane), 2: starting to enter the sane-insane gray zone, 3: insane, 4: REALLY CURSED, 5: TOO CURSED TO CLASSIFY
 
 "#": {
 	"pasta": "##paste here the copypasta",
-	"nsfw": ##put 'true' if the copypasta is NSFW, put 'false' if it isn't,
 	"cursed-level": ##use the 'CURSED LEVEL CHART' to determine the number,
 	"made-as": "##put 'male, 'female, or 'any' depending on copypasta context (this is for filtering (the name is self-explanatory))",
 	"directed-to": "##same as the above one!",
