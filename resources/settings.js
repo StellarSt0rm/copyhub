@@ -1,5 +1,5 @@
 function setSettingsCookie(settingsJsonData, exdays) {
-  document.cookie = `settings=${settingsJsonData};expires=${new Date(Date.now() + exdays * 86400000).toUTCString()};path=/;SameSite=Strict;Secure`;
+  document.cookie = `settings=${settingsJsonData};expires=${new Date(Date.now() + exdays * 86400000).toUTCString()};path=/copyhub/;SameSite=Strict;Secure`;
 }
 
 function getSettingsCookie() {
@@ -18,5 +18,5 @@ function getSettingsCookie() {
 }
 
 function deleteSettingsCookie() {
-	document.cookie = `settings=;expires=${new Date(0).toUTCString()};path=/;SameSite=Strict;Secure`;
+	document.cookie = `settings=;expires=${new Date(0).toUTCString()};path=/copyhub/;SameSite=Strict;Secure`;
 }
