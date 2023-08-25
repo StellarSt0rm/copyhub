@@ -21,6 +21,7 @@
 				background-size: cover;
 				background-attachment: fixed;
 			}
+			/* Header */
 			#header {
 				background-color: #2c2b2b;
 				border-bottom: 2px solid #464545;
@@ -32,6 +33,7 @@
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
+				z-index: 4;
 			}
 			#header .searchbar .textbox {
 				padding: 2px 5px 2px 5px;
@@ -49,6 +51,118 @@
 			#settings-icon:hover {
 				transform: rotate(15deg);
 			}
+			/* Other */
+			.not-loaded {
+				opacity: 0;
+			}
+			/* Loader */
+			#loader-wrapper {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+				overflow: hidden;
+				background: transparent;
+			}
+			#loader {
+				display: block;
+				position: relative;
+				top: 47%;
+				left: 2%;
+				width: 210px;
+				height: 210px;
+				margin: -75px 0 0 -75px;
+				border-radius: 50%;
+				border: 3px solid transparent;
+				border-top-color: #16a085;
+				-webkit-animation: spin 1.7s linear infinite;
+								animation: spin 1.7s linear infinite;
+				z-index: 11;
+			}
+			#loader:before {
+				content: "";
+				position: absolute;
+				top: 5px;
+				left: 5px;
+				right: 5px;
+				bottom: 5px;
+				border-radius: 50%;
+				border: 3px solid transparent;
+				border-top-color: #e74c3c;
+				-webkit-animation: spin-reverse 0.6s linear infinite;
+								animation: spin-reverse 0.6s linear infinite;
+			}
+			#loader:after {
+				content: "";
+				position: absolute;
+				top: 15px;
+				left: 15px;
+				right: 15px;
+				bottom: 15px;
+				border-radius: 50%;
+				border: 3px solid transparent;
+				border-top-color: #f9c922;
+				-webkit-animation: spin 1s linear infinite;
+								animation: spin 1s linear infinite;
+			}
+			@-webkit-keyframes spin {
+				0% {
+					-webkit-transform: rotate(0deg);
+				}
+				100% {
+					-webkit-transform: rotate(360deg);
+				}
+			}
+			@keyframes spin {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+			@-webkit-keyframes spin-reverse {
+				0% {
+					-webkit-transform: rotate(0deg);
+				}
+				100% {
+					-webkit-transform: rotate(-360deg);
+				}
+			}
+			@keyframes spin-reverse {
+				0% {
+					transform: rotate(0deg);
+				}
+				100% {
+					transform: rotate(-360deg);
+				}
+			}
+			#loader-wrapper .loader-section {
+				position: fixed;
+				top: 0;
+				width: 51%;
+				height: 100%;
+				z-index: 10;
+			}
+
+			#loader-wrapper .loader-section.section-left {
+				left: 0;
+			}
+			#loader-wrapper .loader-section.section-right {
+				right: 0;
+			}
+			.loaded {
+				opacity: 0;
+				visibility: hidden;
+				transition: opacity 0.2s ease, visibility 0.2s linear;
+			}
+			.loaded2 {
+				opacity: 1;
+				visibility: visible;
+				transition: opacity 0.1s ease, visibility 0.1s linear;
+			}
 		</style>
 	</head>
 
@@ -61,7 +175,12 @@
 		<!-- CONTAINERS -->
 		<hr style="border:none; margin-bottom: 6em;">
 		<center>
-			<div id="content" style="display: flex; justify-content: center; align-items: center; width: calc(100% - 10%); flex-flow: row wrap;"></div>
+			<div id="loader-wrapper">
+				<div id="loader"></div>
+				<div class="loader-section section-left"></div>
+				<div class="loader-section section-right"></div>
+			</div>
+			<div id="content" class="not-loaded" style="display: flex; justify-content: center; align-items: center; width: calc(100% - 10%); flex-flow: row wrap;"></div>
 		<hr style="border:none; margin-bottom: 10em;">
 		</center>
 		<!-- MANDALA -->

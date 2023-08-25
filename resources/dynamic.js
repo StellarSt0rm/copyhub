@@ -136,12 +136,14 @@ async function automaticFilling() {
 			pastaJsonData = jsonData;
 
 			console.log(`Automatic Filling:\n `); console.log(`----`);
+			document.getElementById("loader-wrapper").classList.add("loaded");
 			for (const id in pastaJsonData) {
 				if (pastaJsonData.hasOwnProperty(id)) {
 					const { pasta, tags } = pastaJsonData[id];
 					appendTemplate(id, pasta, tags);
 				}
 			}
+			document.getElementById("content").classList.add("loaded2");
 	} catch (error) {
 		console.error('(Set Json Data) An error occurred:', error);
 	}
