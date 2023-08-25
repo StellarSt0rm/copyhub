@@ -18,6 +18,5 @@ function getSettingsCookie() {
 }
 
 function deleteSettingsCookie() {
-	const expiredDate = new Date(0).toUTCString();
-	document.cookie = `settings=;expires=${expiredDate};path=/;SameSite=Strict;Secure`;
+	document.cookie = `settings=;expires=${new Date(0).toUTCString()};path=/;SameSite=Strict;Secure`;
 }
