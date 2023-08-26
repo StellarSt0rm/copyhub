@@ -30,5 +30,45 @@
 		"directed-to": "any",
 		"tags": [ "Test Tag 7", "Test Tag 8", "Test Tag 9", "Test Tag 10" ],
 		"lang": "en_US"
+	},
+	"5": {
+		"pasta": "Test Pasta 5",
+		"cursed-level": 0,
+		"made-as": "any",
+		"directed-to": "any",
+		"tags": [ "Test Tag 9", "Test Tag 10", "Test Tag 11", "Test Tag 12" ],
+		"lang": "en_US"
+	},
+	"6": {
+		"pasta": "Test Pasta 6",
+		"cursed-level": 0,
+		"made-as": "any",
+		"directed-to": "any",
+		"tags": [ "Test Tag 11", "Test Tag 12", "Test Tag 13", "Test Tag 14" ],
+		"lang": "en_US"
+	},
+	"7": {
+		"pasta": "Test Pasta 7",
+		"cursed-level": 0,
+		"made-as": "any",
+		"directed-to": "any",
+		"tags": [ "Test Tag 13", "Test Tag 14", "Test Tag 15", "Test Tag 16" ],
+		"lang": "en_US"
+	},
+	"8": {
+		"pasta": "Test Pasta 8",
+		"cursed-level": 0,
+		"made-as": "any",
+		"directed-to": "any",
+		"tags": [ "Test Tag 15", "Test Tag 16", "Test Tag 17", "Test Tag 18" ],
+		"lang": "en_US"
+	},
+	"9": {
+		"pasta": "Test Pasta 9",
+		"cursed-level": 0,
+		"made-as": "any",
+		"directed-to": "any",
+		"tags": [ "Test Tag 17", "Test Tag 18", "Test Tag 19", "Test Tag 20" ],
+		"lang": "en_US"
 	}
 }

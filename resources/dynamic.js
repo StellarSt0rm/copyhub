@@ -1,7 +1,12 @@
+// Other Functions
+function wait(secs) {
+  return new Promise(resolve => setTimeout(resolve, secs * 1000));
+}
+
 // Template Filler Function
-function appendTemplate(id, pasta, tags) {
+function appendTemplate(id, pasta, tags, time) {
 	const template = `
-		<container style="margin: 10px;">
+		<container style="margin: 10px; animation: fadeInCascading ${time}s ease forwards;">
 			<button onclick="handleIdClick('${id}')" class="id-text">ID: ${id}</button>
 			<p class="pasta">${pasta}</p>
 			<div class="tags">
@@ -33,61 +38,12 @@ function handleIdClick(id) {
 	navigator.clipboard.writeText(`${id}`);
 }
 
-// Test Function To Search In The Json (Will Be Hooked With 'appendTemplate()' At Some Point
-function searchTags(pastaJsonData, searchTerm) {
-	console.log(`Searching Tag Matches For '${searchTerm}'`)
-	function searchJson(pastaJsonData, searchTerm) {
-		let matches = [];
-		for (let key in pastaJsonData) {
-			let value = pastaJsonData[key];
-			if (typeof value === "object" && "tags" in value) {
-				let tags = value["tags"];
-				if (tags.includes(searchTerm)) {
-					matches.push(key);
-					console.log(`  Match Found!`);
-				}
-			}
-			if (typeof value === "object") {
-				matches = matches.concat(searchJson(value, searchTerm));
-			}
-		}
-		return matches
-	}
-	const results = searchJson(pastaJsonData, searchTerm);
-	if (results.length > 0) {
-		return results
-	} else {
-		return results
-	}
-}
-
-// Data Extractor From ID
-function extractJsonData(ids, pastaJsonData) {
-	for (const id of ids) {
-		const idData = pastaJsonData[id];
-			if (idData) {
-				console.log(`Extracting Data For ID '${id}'`)
-				console.log(`  Extracting Pasta`)
-				const pasta = idData.pasta;
-				console.log(`  Extracting Tags`)
-				const tags = idData.tags;
-
-				console.log(`  Sending Data To 'appendTemplate()'`)
-				console.log(` --`)
-				appendTemplate(id, pasta, tags);
-		}
-	}
-}
-
 // Search Handler
 document.getElementById('searchbar').addEventListener('submit', function(event) {
-	event.preventDefault(); // Prevents the form from submitting normally
-
+	event.preventDefault();
 	var searchQuery = document.getElementById('textbox').value;
-
 	var url = 'https://stellarst0rm.github.io/copyhub/search?query=' + encodeURIComponent(searchQuery) + '&param=1234';
-
-	window.location.href = url; // Redirects to the search page with the query parameters
+	window.location.href = url;
 });
 
 /* Local Test Json Data (For Local Testing)
@@ -136,17 +92,21 @@ async function automaticFilling() {
 			pastaJsonData = jsonData;
 
 			console.log(`Automatic Filling:\n `); console.log(`----`);
-			document.getElementById("loader-wrapper").classList.add("loaded");
-			for (const id in pastaJsonData) {
-				if (pastaJsonData.hasOwnProperty(id)) {
-					const { pasta, tags } = pastaJsonData[id];
-					appendTemplate(id, pasta, tags);
+			await wait(0.1);
+			var time = 0
+			if(!window.location.href.includes("copyhub/search")) {
+				for (const id in pastaJsonData) {
+					if (pastaJsonData.hasOwnProperty(id)) {
+						time = time + 1/10
+						const { pasta, tags } = pastaJsonData[id];
+						appendTemplate(id, pasta, tags, time);
+					}
 				}
 			}
 			document.getElementById("content").classList.add("loaded2");
+			document.getElementById("loader-wrapper").classList.add("loaded");
 	} catch (error) {
 		console.error('(Set Json Data) An error occurred:', error);
 	}
 }
-
 automaticFilling();

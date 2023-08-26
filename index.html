@@ -53,7 +53,7 @@
 			}
 			/* Other */
 			.not-loaded {
-				opacity: 0;
+				visibility: hidden;
 			}
 			/* Loader */
 			#loader-wrapper {
@@ -154,14 +154,21 @@
 				right: 0;
 			}
 			.loaded {
-				opacity: 0;
 				visibility: hidden;
 				transition: opacity 0.2s ease, visibility 0.2s linear;
 			}
 			.loaded2 {
-				opacity: 1;
 				visibility: visible;
-				transition: opacity 0.1s ease, visibility 0.1s linear;
+			}
+			@keyframes fadeInCascading {
+				0% {
+						opacity: 0;
+						transform: translateY(-10px);
+				}
+				100% {
+						opacity: 1;
+						transform: translateY(0);
+				}
 			}
 		</style>
 	</head>
