@@ -6,7 +6,7 @@ function wait(secs) {
 // Template Filler Function
 function appendTemplate(id, pasta, tags, time) {
 	const template = `
-		<container style="margin: 10px; animation: fadeInCascading ${time}s ease forwards;">
+		<container style="margin: 10px; animation: fadeInCascading 0.${time}s ease forwards;">
 			<button onclick="handleIdClick('${id}')" class="id-text">ID: ${id}</button>
 			<p class="pasta">${pasta}</p>
 			<div class="tags">
@@ -97,7 +97,7 @@ async function automaticFilling() {
 			if(!window.location.href.includes("copyhub/search")) {
 				for (const id in pastaJsonData) {
 					if (pastaJsonData.hasOwnProperty(id)) {
-						time = time + 1/10
+						time = time + 1
 						const { pasta, tags } = pastaJsonData[id];
 						appendTemplate(id, pasta, tags, time);
 					}
