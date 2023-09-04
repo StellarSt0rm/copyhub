@@ -5,7 +5,9 @@ function wait(secs) {
 
 // Ms Calc Function
 function calcMs() {
-  if(ms == 99) {
+  if(ctrl == 5) {
+    return `0s`
+  } else if(ms == 99) {
     ms = 0
     s++
     return `${s}.${ms}s`
@@ -107,6 +109,7 @@ async function automaticFilling() {
 			await wait(0.1);
 			s = 0
 			ms = 0
+			ctrl = 0
 			if(!window.location.href.includes("copyhub/search")) {
 				for (const id in pastaJsonData) {
 					if (pastaJsonData.hasOwnProperty(id)) {
