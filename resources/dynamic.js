@@ -8,10 +8,10 @@ function calcMs() {
   if(ms == 99) {
     ms = 0
     s++
-    return s + "." + ms + "s"
+    return `${s}.${ms}s`
   } else {
     ms++
-    return s + "." + ms + "s"
+    return `${s}.${ms}s`
   }
 }
 
@@ -28,7 +28,7 @@ function appendTemplate(id, pasta, tags, time) {
 		</container>
 	`;
 	
-	console.log(`Filling Template For ID '${id}'`);
+	console.log(`Filling Template For ID '${id}' (Ease In Time: ${time})`);
 	const contentElement = document.getElementById("content");
 	console.log(`  Inserted ID`)
 	console.log(`  Inserted Pasta`)
