@@ -3,8 +3,8 @@ function wait(secs) {
   return new Promise(resolve => setTimeout(resolve, secs * 1000));
 }
 
-// Ms Calc Function
-function calcMs() {
+// Time Calc Function
+function calcTime() {
   if(ctrl == 100) {
     return `0s`
   } else if(ms == 99) {
@@ -114,7 +114,7 @@ async function automaticFilling() {
 				for (const id in pastaJsonData) {
 					if (pastaJsonData.hasOwnProperty(id)) {
 						const { pasta, tags } = pastaJsonData[id];
-						appendTemplate(id, pasta, tags, calcMs());
+						appendTemplate(id, pasta, tags, calcTime());
 					}
 				}
 			}
