@@ -5,7 +5,7 @@ function wait(secs) {
 
 // Ms Calc Function
 function calcMs() {
-  if(ctrl == 5) {
+  if(ctrl == 100) {
     return `0s`
   } else if(ms == 99) {
     ms = 0
