@@ -45,6 +45,8 @@ function appendTemplate(id, pasta, tags, time) {
 // Action Handler Functions
 function handleTagClick(tag) {
 	console.log(`Tag '${tag}' Clicked.`);
+	var url = 'https://stellarst0rm.github.io/copyhub/search?tag=' + encodeURIComponent(tag) + '&param=1234';
+	window.location.href = url;
 }
 
 function handleIdClick(id) {
