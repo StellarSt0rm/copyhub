@@ -4,9 +4,8 @@ function setSettings(settingsJsonData) {
 
 function getSettings() {
   const data = localStorage.getItem("settings")
-  if(data = null) {return false}
+  if(data == null) {return false}
   return JSON.parse(data)
-
 }
 
 function deleteSettings() {
