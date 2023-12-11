@@ -5,7 +5,7 @@ function wait(secs) {
 
 function loadScript(name) {
 	const script = document.createElement('script');
-	script.src = window.location.origin + "copyhub/res/js" + name + ".js";
+	script.src = window.location.origin + "copyhub/res/js/" + name + ".js";
 	document.head.appendChild(script);
 }
 
