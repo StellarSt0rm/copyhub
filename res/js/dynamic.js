@@ -45,7 +45,7 @@ function appendTemplate(id, pasta, tags, time) {
 // Action Handler Functions
 function handleTagClick(tag) {
 	console.log(`Tag '${tag}' Clicked.`);
-	var url = 'https://stellarst0rm.github.io/copyhub/search?tag=' + encodeURIComponent(tag) + '&param=1234';
+	var url = window.location.origin + '/copyhub/search?tag=' + encodeURIComponent(tag) + '&param=1234';
 	window.location.href = url;
 }
 
@@ -58,52 +58,16 @@ function handleIdClick(id) {
 document.getElementById('searchbar').addEventListener('submit', function(event) {
 	event.preventDefault();
 	var searchQuery = document.getElementById('textbox').value;
-	var url = 'https://stellarst0rm.github.io/copyhub/search?query=' + encodeURIComponent(searchQuery) + '&param=1234';
+	var url = window.location.origin + '/copyhub/search?query=' + encodeURIComponent(searchQuery) + '&param=1234';
 	window.location.href = url;
 });
-
-/* Local Test Json Data (For Local Testing)
-var pastaJsonData={
-	"1": {
-		"pasta": "Test Pasta 1",
-		"cursed-level": 0,
-		"made-as": "any",
-		"directed-to": "any",
-		"tags": [ "Test Tag 1", "Test Tag 2", "Test Tag 3", "Test Tag 4" ],
-		"lang": "en_US"
-	},
-	"2": {
-		"pasta": "Test Pasta 2",
-		"cursed-level": 0,
-		"made-as": "any",
-		"directed-to": "any",
-		"tags": [ "Test Tag 3", "Test Tag 4", "Test Tag 5", "Test Tag 6" ],
-		"lang": "en_US"
-	},
-	"3": {
-		"pasta": "Test Pasta 3",
-		"cursed-level": 0,
-		"made-as": "any",
-		"directed-to": "any",
-		"tags": [ "Test Tag 5", "Test Tag 6", "Test Tag 7", "Test Tag 8" ],
-		"lang": "en_US"
-	},
-	"4": {
-		"pasta": "Test Pasta 4",
-		"cursed-level": 0,
-		"made-as": "any",
-		"directed-to": "any",
-		"tags": [ "Test Tag 7", "Test Tag 8", "Test Tag 9", "Test Tag 10" ],
-		"lang": "en_US"
-	}
-};*/
 
 // Set Json Data And Start Initial Card Filling
 var pastaJsonData = [];
 async function automaticFilling() {
 	console.log(`Transfering Pasta Data...`)
 	try {
-			const response = await fetch('./resources/copypastas.json');
+			const response = await fetch('./res/copypastas.json');
 			const jsonData = await response.json();
 			pastaJsonData = jsonData;
 

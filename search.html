@@ -1,6 +1,81 @@
 <!DOCTYPE html>
 
 <html>
-	<head><link rel="icon" href="./resources/favicon.ico"><title>WIP - CopyHub</title></head>
-	<body style="display: flex;justify-content: center;background-color: #1b1b1b;"><h1 style="font-size: 100px; color: #ffffff00;background-clip: text;background-image: url(./resources/Wallpaper2.jpg);background-size: cover;">WORK IN PROGRESS</h1></body>
+	<head>
+		<title>Search - CopyHub [WIP]</title>
+		<meta name="author" content="StellarSt0rm">
+		<link rel="icon" href="./res/img/favicon.ico">
+		
+		<link rel="stylesheet" href="./res/css/general.css">
+		<link rel="stylesheet" href="./res/css/dynamic.css">
+		<link rel="stylesheet" href="./res/css/nerdfonts/fonts.css">
+		<link rel="stylesheet" href="./res/css/mandala.css">
+		<style>
+			body {
+				font-family: Arial, Helvetica, sans-serif;
+				color: white;
+				background-color: #1b1b1b;
+				overflow-x: hidden;
+				background-image: url(./res/img/Wallpaper.jpg);
+				background-position: center;
+				background-size: cover;
+				background-attachment: fixed;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- HEADER -->
+		<header id="header" style="user-select: none;">
+			<a class="logo" style="cursor: pointer" href="./"><h1 style="display: inline-block;text-decoration: none;color: white;" >Copy</h1><h1 style="display: inline-block;color: black;padding: 5px 10px 5px 10px;border-radius: 12px;background: #FF9900;margin-left: 5px">Hub</h1><a style="animation: fadeInCascading2 0.5s ease forwards; position: absolute; color: black;background-color: rgb(255, 153, 0);padding: 2px 5px 2px 5px;border-radius: 5px;font-weight: bolder;">Search</a></a>
+			<center style="display: inline;"><form id="searchbar" class="searchbar" style="display: inline-block;transform: translateY(-5px);width: calc(100% - (167.233px * 2) - (4.45px * 2));user-select: text;"><input id="textbox" class="textbox" type="text" name="search" placeholder="Search CopyPastas"></form></center>
+			<a class="icon bold" id="settings-icon" style="font-size: 40px;cursor: pointer;text-decoration: none;color: white;float: right;margin-top: 19px;margin-left: calc(167.233px - 24.0834px - 5px + 4.45px);margin-right: 5px;" href="./settings.html"></a>
+		</header>
+		<!-- CONTENT -->
+		<hr style="border:none;margin-bottom: 6em;">
+		<center>
+			<div id="loader-wrapper">
+				<div id="loader"></div>
+				<div class="loader-section section-left"></div>
+				<div class="loader-section section-right"></div>
+			</div>
+			<content id="content" class="not-loaded" style="display: flex;justify-content: center;align-items: center;width: 100%;flex-flow: row wrap;"></content>
+			<hr style="border:none;margin-bottom: 10em;">
+		</center>
+		<!-- MANDALA -->
+		<div id="mandala-container">
+			<svg id="mandala" width="675" height="675" viewBox="0 0 675 675" fill="white" xmlns="http://www.w3.org/2000/svg">
+					<defs>
+						<path d="M337.5,337.5 m-320,0 a320,320 0 1,1 640,0 a320,320 0 1,1 -640,0" id="circle1"></path>
+						<path d="M337.5,337.5 m-280,0 a280,280 0 1,1 560,0 a280,280 0 1,1 -560,0" id="circle2"></path>
+						<path d="M337.5,337.5 m-240,0 a240,240 0 1,1 480,0 a240,240 0 1,1 -480,0" id="circle3"></path>
+						<path d="M337.5,337.5 m-200,0 a200,200 0 1,1 400,0 a200,200 0 1,1 -400,0" id="circle4"></path>
+						<path d="M337.5,337.5 m-160,0 a160,160 0 1,1 320,0 a160,160 0 1,1 -320,0" id="circle5"></path>
+					</defs>
+					<text dy="70" textLength="2010">
+						<textPath textLength="2010" href="#circle1">&nbsp;&nbsp;&nbsp;/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>&nbsp;&nbsp;&nbsp;/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>&nbsp;&nbsp;&nbsp;/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>&nbsp;&nbsp;&nbsp;/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>&nbsp;&nbsp;&nbsp;/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>&nbsp;&nbsp;&nbsp;/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>&nbsp;&nbsp;&nbsp;/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>/ <tspan>/</tspan>
+						</textPath>
+					</text>
+					<text dy="70" textLength="1760">
+						<textPath textLength="1760" href="#circle2">&nbsp;&nbsp;+ <tspan>+</tspan>+ <tspan>+</tspan>+ <tspan>+</tspan>&nbsp;&nbsp;+ <tspan>+</tspan>+ <tspan>+</tspan>+ <tspan>+</tspan>&nbsp;&nbsp;+ <tspan>+</tspan>+ <tspan>+</tspan>+ <tspan>+</tspan>&nbsp;&nbsp;+ <tspan>+</tspan>+ <tspan>+</tspan>+ <tspan>+</tspan>&nbsp;&nbsp;+ <tspan>+</tspan>+ <tspan>+</tspan>+ <tspan>+</tspan>&nbsp;&nbsp;+ <tspan>+</tspan>+ <tspan>+</tspan>+ <tspan>+</tspan>&nbsp;&nbsp;+ <tspan>+</tspan>+ <tspan>+</tspan>+ <tspan>+</tspan>
+						</textPath>
+					</text>
+					<text dy="70" textLength="1507">
+						<textPath textLength="1507" href="#circle3">
+							<tspan>{</tspan>{ <tspan>{</tspan>{&nbsp; <tspan>}</tspan>} <tspan>}</tspan>}&nbsp;&nbsp; <tspan>{</tspan>{ <tspan>{</tspan>{&nbsp; <tspan>}</tspan>} <tspan>}</tspan>}&nbsp;&nbsp; <tspan>{</tspan>{ <tspan>{</tspan>{&nbsp; <tspan>}</tspan>} <tspan>}</tspan>}&nbsp;&nbsp; <tspan>{</tspan>{ <tspan>{</tspan>{&nbsp; <tspan>}</tspan>} <tspan>}</tspan>}&nbsp;&nbsp; <tspan>{</tspan>{ <tspan>{</tspan>{&nbsp; <tspan>}</tspan>} <tspan>}</tspan>}&nbsp;&nbsp; <tspan>{</tspan>{ <tspan>{</tspan>{&nbsp; <tspan>}</tspan>} <tspan>}</tspan>}&nbsp;&nbsp;
+						</textPath>
+					</text>
+					<text dy="70" textLength="1257">
+						<textPath textLength="1257" href="#circle4">&nbsp;&nbsp;&nbsp;../../ &nbsp;&nbsp;&nbsp;../../ &nbsp;&nbsp;&nbsp;../../ &nbsp;&nbsp;&nbsp;../../ &nbsp;&nbsp;&nbsp;../../ &nbsp;&nbsp;&nbsp;../../ &nbsp;&nbsp;&nbsp;../../</textPath>
+					</text>
+					<text dy="70" textLength="1005">
+						<textPath textLength="1005" href="#circle5">
+							<tspan>&lt;&gt;</tspan>&lt;/&gt; <tspan>&lt;&gt;</tspan>&lt;/&gt; <tspan>&lt;&gt;</tspan>&lt;/&gt; <tspan>&lt;&gt;</tspan>&lt;/&gt; <tspan>&lt;&gt;</tspan>&lt;/&gt; <tspan>&lt;&gt;</tspan>&lt;/&gt; <tspan>&lt;&gt;</tspan>&lt;/&gt; <tspan>&lt;&gt;</tspan>&lt;/&gt; <tspan>&lt;&gt;</tspan>&lt;/&gt; <tspan>&lt;&gt;</tspan>&lt;/&gt; <tspan>&lt;&gt;</tspan>&lt;/&gt; <tspan>&lt;&gt;</tspan>&lt;/&gt; <tspan>&lt;&gt;</tspan>&lt;/&gt; <tspan>&lt;&gt;</tspan>&lt;/&gt; <tspan>&lt;&gt;</tspan>&lt;/&gt; <tspan>&lt;&gt;</tspan>&lt;/&gt;
+						</textPath>
+					</text>
+			</svg>
+		</div>
+	</body>
 </html>
+
+<!--#333333 (lighter) -> #262626 (between) -> #1b1b1b (original) -> #0e0e0e (darker)-->
