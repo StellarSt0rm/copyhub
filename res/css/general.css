@@ -37,6 +37,9 @@
 /* Loader */
 #loader-wrapper {
 	position: fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -48,11 +51,9 @@
 #loader {
 	display: block;
 	position: relative;
-	top: 47%;
-	left: 2%;
+	left: -0.5%;
 	width: 210px;
 	height: 210px;
-	margin: -75px 0 0 -75px;
 	border-radius: 50%;
 	border: 3px solid transparent;
 	border-top-color: #16a085;
@@ -118,20 +119,7 @@
 		transform: rotate(-360deg);
 	}
 }
-#loader-wrapper .loader-section {
-	position: fixed;
-	top: 0;
-	width: 51%;
-	height: 100%;
-	z-index: 10;
-}
 
-#loader-wrapper .loader-section.section-left {
-	left: 0;
-}
-#loader-wrapper .loader-section.section-right {
-	right: 0;
-}
 .loaded {
 	visibility: hidden;
 	transition: opacity 0.2s ease, visibility 0.2s linear;
