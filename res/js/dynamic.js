@@ -2,6 +2,11 @@
 function wait(secs) {
   return new Promise(resolve => setTimeout(resolve, secs * 1000));
 }
+function loadScript(name) {
+	const script = document.createElement('script');
+	script.src = window.location.origin + "copyhub/res/js" + name + ".js";
+	document.head.appendChild(script);
+}
 
 // Time Calc Function
 function calcTime() {
