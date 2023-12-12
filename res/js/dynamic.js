@@ -1,11 +1,14 @@
+// Global Vars
+webLocation = window.location.origin + "/copyhub/"
+
 // Other Functions
 function wait(secs) {
   return new Promise(resolve => setTimeout(resolve, secs * 1000));
 }
 
 function loadScript(name) {
-	const script = document.createElement('script');
-	script.src = window.location.origin + "copyhub/res/js/" + name + ".js";
+	const script = document.createElement("script");
+	script.src = webLocation + "res/js/" + name + ".js";
 	document.head.appendChild(script);
 }
 
@@ -51,7 +54,7 @@ function appendTemplate(id, pasta, tags, time) {
 // Action Handler Functions
 function handleTagClick(tag) {
 	console.log(`Tag '${tag}' Clicked.`);
-	var url = window.location.origin + '/copyhub/search?tag=' + encodeURIComponent(tag) + '&param=1234';
+	var url = webLocation + "search?tag=" + encodeURIComponent(tag) + "&param=1234";
 	window.location.href = url;
 }
 
@@ -61,10 +64,10 @@ function handleIdClick(id) {
 }
 
 // Search Handler
-document.getElementById('searchbar').addEventListener('submit', function(event) {
+document.getElementById("searchbar").addEventListener("submit", function(event) {
 	event.preventDefault();
-	var searchQuery = document.getElementById('textbox').value;
-	var url = window.location.origin + '/copyhub/search?query=' + encodeURIComponent(searchQuery) + '&param=1234';
+	var searchQuery = document.getElementById("textbox").value;
+	var url = webLocation + "search?query=" + encodeURIComponent(searchQuery) + "&param=1234";
 	window.location.href = url;
 });
 
@@ -73,7 +76,7 @@ var pastaJsonData = [];
 async function automaticFilling() {
 	console.log(`Transfering Pasta Data...`)
 	try {
-			const response = await fetch('./res/copypastas.json');
+			const response = await fetch("./res/copypastas.json");
 			const jsonData = await response.json();
 			pastaJsonData = jsonData;
 
@@ -93,7 +96,7 @@ async function automaticFilling() {
 			document.getElementById("content").classList.add("loaded2");
 			document.getElementById("loader-wrapper").classList.add("loaded");
 	} catch (error) {
-		console.error('(Set Json Data) An error occurred:', error);
+		console.error("(Set Json Data) An error occurred:", error);
 	}
 }
 automaticFilling();
